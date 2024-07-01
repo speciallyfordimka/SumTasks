@@ -1,18 +1,17 @@
-let string = 'hello alexandr!'
-let final_string = ''
-let symbol
-let i = 0
+let arrayNums = [1,2,3,6,8,1,6,3,2,1,0,4]
+let arrayWords = ['one', 'two', 'three']
 
-while(i < string.length){
-    if(string[i] != ' '){
-        symbol = string[i]
-        while((string[i] != ' ') && (i < string.length)){
-            final_string += symbol
-            i++
+function bubbleSort(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      for (let j = 0; j < i; j++) {
+        if (array[j] > array[j + 1]) {
+          let replace = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = replace;
         }
+      }
     }
-    final_string += ' '
-    i++
-}
+    return array
+  }
 
-console.log(final_string)
+  console.log(bubbleSort(arrayNums).concat(arrayWords))
