@@ -1,10 +1,16 @@
-let string = 'DDADSADASDAAADS'
-let symbols = ''
-
-for (let i = 0; i < string.length; i++){
-    if (!symbols.includes(string[i])){
-        symbols += string[i]
-    }
+let object = {
+    a: 1,
+    b: 2
 }
 
-console.log(symbols)
+function convert(object){
+    let array = []
+
+    for(key in object){
+        array.push([key, object[key]])
+    }
+
+    return array
+}
+
+console.log(convert(object))

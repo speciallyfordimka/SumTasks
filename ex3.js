@@ -1,9 +1,38 @@
-let strings = ['дим', 'манек', 'рота']
+class Worker {
 
-for(let i = 0; i < strings.length; i++){
-    for (let j = strings[i].length - 2; j >= 0; j--){
-        strings[i] += (strings[i])[j]
+    #name
+    #surname
+    #rate
+    #days
+
+    constructor(name, surname, rate, days){
+        this.#name = name
+        this.#surname = surname
+        this.#rate = rate
+        this.#days = days
+    }
+
+    get getName(){
+        return this.#name
+    }
+    get getSurname(){
+        return this.#surname
+    }
+
+    get getRate(){
+        return this.#rate
+    }
+
+    get getDays(){
+        return this.#days
+    }
+
+    getSalary(){
+        return this.rate * this.days
     }
 }
 
-console.log(strings)
+const Me = new Worker('Andrew','Sergeev', 3000, 15)
+
+console.log(Me.getName)
+console.log(Me.name)

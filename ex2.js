@@ -1,18 +1,17 @@
-let string = 'hello alexandr!'
-let final_string = ''
-let symbol
-let i = 0
-
-while(i < string.length){
-    if(string[i] != ' '){
-        symbol = string[i]
-        while((string[i] != ' ') && (i < string.length)){
-            final_string += symbol
-            i++
-        }
+class Worker {
+    constructor(name, surname, rate, days){
+        this.name = name
+        this.surname = surname
+        this.rate = rate
+        this.days = days
     }
-    final_string += ' '
-    i++
+
+    getSalary(){
+        return this.rate * this.days
+    }
 }
 
-console.log(final_string)
+const Me = new Worker('Andrew','Sergeev', 3000, 15)
+
+console.log(Me)
+console.log(Me.getSalary())
