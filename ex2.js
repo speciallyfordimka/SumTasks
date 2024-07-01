@@ -1,18 +1,32 @@
-let string = 'hello alexandr!'
-let final_string = ''
-let symbol
-let i = 0
-
-while(i < string.length){
-    if(string[i] != ' '){
-        symbol = string[i]
-        while((string[i] != ' ') && (i < string.length)){
-            final_string += symbol
-            i++
+class MyString{
+    reverse(string) {
+        let newString = ''
+        for(let i = string.length - 1; i >= 0; i--){
+            newString += string[i]
         }
+        return newString
     }
-    final_string += ' '
-    i++
+
+    ucFirst(string){
+        return string.toUpperCase()[0] + string.slice(1, string.length)
+    }
+
+    ucWords(string){
+        let newString = ''
+        newString += string.toUpperCase()[0]
+        for(let i = 1; i < string.length; i++){
+            if(string[i - 1] == ' '){
+                newString += string.toUpperCase()[i]
+            }
+            else{newString += string[i]}
+        }
+        return newString
+    }
 }
 
-console.log(final_string)
+
+const str = new MyString()
+
+console.log(str.reverse('new'))
+console.log(str.ucFirst('new'))
+console.log(str.ucWords('new word'))
